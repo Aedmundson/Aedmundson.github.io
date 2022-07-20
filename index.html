@@ -1,22 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function(){
+  
+  $(window).on('scroll',function() {
+    var scrolltop = $(this).scrollTop();
+
+    var $nav = $(".c-secondary-nav");
+    if(scrolltop >= $nav.offset().top + $nav.height()) {
+      $('.c-secondary-nav__fixed').fadeIn(250);
+    }
+    else {
+      $('.c-secondary-nav__fixed').css("display","none");
+    }
+  });
+});
+  </script>
 </head>
 
 <body>
   <style>
+    .c-secondary-nav__fixed {
+      position: fixed;
+      display: none;
+    }
     .c-secondary-nav {
+      display:block;
+    }
+    .c-secondary-nav, .c-secondary-nav__fixed {
       width: 100%;
       background: #F9FAFA;
-      display: block;
-      padding: 20px 0;
+      padding: 15px 0;
       color: #1D252C;
-      position: fixed;
+      /* position: fixed; */
       top: 0px;
+      border-bottom: 1px solid #D9D9D9;
+    }
+    .c-secondary-nav ul, .c-secondary-nav__fixed ul {
+      display: flex;
+      align-content: space-between;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .c-secondary-nav li, .c-secondary-nav__fixed li {
+      flex-wrap: nowrap;
+      width: 25%;
+      list-style: none;
     }
   </style>
 <div class="c-secondary-nav">
-
+  <ul>
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+  </ul>
+</div>
+<div class="c-secondary-nav__fixed">
+  <ul>
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+    <li>Test</li>
+  </ul>
 </div>
 </body>
 </html>
