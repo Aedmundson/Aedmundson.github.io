@@ -6,7 +6,11 @@
 /*STICK CLASS*/
 .stick {
     /*position: fixed;*/
-}                                                                                                                                                                                                                                                                                                                  
+}         
+
+.gin--edit-form header.header{
+  display: none !important;
+}
 
 header.header {
     padding:0;
@@ -50,44 +54,6 @@ header.header {
     text-decoration: underline;
 }
 
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-}
-.content {
-    width: 40%;
-    margin: 10px auto;
-    background-color: white;
-    padding: 35px;
-}
-
-.stickable {
-    position: relative;
-    background-color: #fff;
-    padding: 1.5rem;
-}
-
-.table-content {
-    width: 20%;
-}
-
-.table-content ul {
-    margin:0;
-    padding:0;
-}
-
-.table-content ul li {
-    list-style-type: none;
-}
-
-.table-content ul li a {
-    display: block;
-    padding: 0.7rem 1rem;
-}
 
 .c-select {
   display: none;
@@ -143,35 +109,6 @@ header.header {
     }
     .header ul a {
         font-size: 100%;
-    }
-
-    .container {
-        width: 100%;
-        flex-flow: row wrap;
-    }
-    .content {
-        width: 100%;
-    }
-    .table-content {
-        width: 100%;
-        margin-top: 10px;
-        z-index: 0;
-    }
-    .table-content ul {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
-    }
-    .table-content ul a {
-        display: block;
-        padding: 0.5rem 0.7rem;
-    }
-
-    .stickable, .social {
-        background-color: #e84393;
-        color: #ffffff;
-        z-index: 6;
-        width: 100%;
     }
 
 }
