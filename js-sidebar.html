@@ -5,9 +5,17 @@
     
 
 <script type="text/javascript">
+  function scrollTo(element) {
+  window.scroll({
+    behavior: 'smooth',
+    left: 0,
+    top: element.offsetTop
+  });
+}
 
   (function(){
       "use strict"
+      
       setTimeout(() => {
 
         // create new element
@@ -19,10 +27,18 @@
         
         var htmlArray = [];
         for (var i = 0; i < h2.length; i++) {
-          var htmlinner = '<li><a href="#'+ i +'">'+ h2[i].innerText +'</a></li>';
+          var htmlinner = '<li><a href="#'+ i +'" id="anchor_'+ i +'">'+ h2[i].innerText +'</a></li>';
           htmlArray.push(htmlinner);
 
           h2[i].setAttribute("id", i);
+          h2[i].setAttribute("data-section", i);
+
+          const linkID = document.getElementById('anchor_'+ i +);
+
+          linkID.addEventListener('click', () => {
+            scrollTo(document.getElementById(i));
+            linkID.classList.add('active');
+          });
         }
 
         var htmljoin = htmlArray.join();
