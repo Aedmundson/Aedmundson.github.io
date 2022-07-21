@@ -10,13 +10,13 @@
   (function(){
       "use strict"
 
-      function scrollTo(element) {
-  window.scroll({
-    behavior: 'smooth',
-    left: 0,
-    top: element.offsetTop
-  });
-}
+//       function scrollTo(element) {
+//   window.scroll({
+//     behavior: 'smooth',
+//     left: 0,
+//     top: element.offsetTop
+//   });
+// }
       
       setTimeout(() => {
 
@@ -33,14 +33,14 @@
           htmlArray.push(htmlinner);
 
           h2[i].setAttribute("id", i);
-          h2[i].setAttribute("data-section", i);
+          // h2[i].setAttribute("data-section", i);
 
-          const linkID = document.getElementById('anchor_'+ i);
+          // const linkID = document.getElementById('anchor_'+ i);
 
-          linkID.addEventListener('click', () => {
-            scrollTo(document.getElementById(i));
-            linkID.classList.add('active');
-          });
+          // linkID.addEventListener('click', () => {
+          //   scrollTo(document.getElementById(i));
+          //   linkID.classList.add('active');
+          // });
         }
 
         var htmljoin = htmlArray.join();
