@@ -35,7 +35,7 @@
           h2[i].setAttribute("id", i);
           h2[i].setAttribute("data-section", i);
 
-          const linkID = document.getElementById('anchor_'+ i +);
+          const linkID = document.getElementById('anchor_'+ i);
 
           linkID.addEventListener('click', () => {
             scrollTo(document.getElementById(i));
