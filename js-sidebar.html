@@ -43,14 +43,11 @@
         elem.innerHTML = htmlpre + htmlfinal + htmlpost;
 
         // grab target element reference
-        const target = document.querySelectorAll(".header-link");
+        const target = document.querySelectorAll(".active");
 
         // insert the element before target element
         
-
-        for (var i = 0; i < target.length; i++) {
-          target[i].appendChild(elem, target[i]);
-        }
+          target[0].appendChild(elem, target[0]);
 
       }, "500")
   })()
