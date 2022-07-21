@@ -20,7 +20,7 @@
         const target = document.querySelectorAll("[data-layout='8']");
 
         // insert the element before target element
-        target[0].appendChild(elem)
+        target[0].insertBefore(elem, target[0].firstChild)
       }, "1000")
   })()
   
