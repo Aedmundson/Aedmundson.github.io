@@ -10,9 +10,6 @@
       "use strict"
       setTimeout(() => {
 
-        const target1 = document.getElementsByClassName('gap-y-8');
-        target1.classList.add('grid-expand');
-
         // create new element
         const elem = document.createElement('div');
         elem.classList.add('large:col-span-4', 'column--index-1', 'grid', 'gap-4', 'grid-cols-1', 'col-sticky');
@@ -20,10 +17,10 @@
         elem.innerText = '<div class="test">test</div>';
 
         // grab target element reference
-        const target = document.getElementsByClassName('grid-expand');
+        const target = document.querySelectorAll("[data-layout='8']");
 
         // insert the element before target element
-        target.parentNode.appendChild(elem, target);
+        target.parentNode.insertBefore(elem, target);
       }, "1000")
   })()
   
