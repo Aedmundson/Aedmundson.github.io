@@ -111,7 +111,7 @@ header.header {
     }
 
     .mobile-active {
-      height: 294px !important;
+      height: 343px !important;
     }
 
     .header ul {
@@ -239,9 +239,16 @@ header.header {
                                       // We can't apply the css style to all, so we disable
                                       element.classList.add('stick')
                                       element.style.position= 'fixed'
-                                      element.style.top = 92 + 'px'
                                       element.style.width = 100 + 'vw'
                                       element.style.marginTop = 0 + 'px'
+
+                                      let isMobile = window.matchMedia("only screen and (max-width: 780px)").matches;
+
+                                      if (isMobile) {
+                                        element.style.top = 38 + 'px'
+                                      }else {
+                                        element.style.top = 92 + 'px'
+                                      }
               
                                       //  We add a padding-top to compensiate the header's space
                                       // document.body.style.paddingTop = parseInt(rect.height) + 'px'
