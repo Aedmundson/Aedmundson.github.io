@@ -29,7 +29,7 @@ header.header {
 }
 
 .header ul li:hover {
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: #D9D9D9;
 }
 .header ul {
@@ -48,6 +48,10 @@ header.header {
 }
 
 .header .active {
+  background-color: #1ce783;
+}
+
+.header .active:hover {
   background-color: #1ce783;
 }
 
@@ -78,12 +82,13 @@ header.header {
     }
 
     .sub-nav li:hover {
-      background-color: transparent;
+      background-color: transparent !important;
     }
 
     .sub-nav li a {
       text-decoration: none;
       padding: 10px 20px;
+      font-weight: 100;
     }
 
     .sub-nav li a:hover {
@@ -93,7 +98,7 @@ header.header {
 
 @media screen and (max-width: 780px) {
 
-  .sidebar-menu {
+  .sub-nav {
     display: none;
   }
 
