@@ -19,7 +19,7 @@ header.header {
     transition: all 0.5s ease-out;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    margin-top: -97px;
+    margin-top: -48px;
     left: 0px;
 }
 
@@ -185,7 +185,7 @@ header.header {
                                       let isMobile = window.matchMedia("only screen and (max-width: 780px)").matches;
 
                                       if (isMobile) {
-                                        element.style.top = 38 + 'px'
+                                        element.style.top = 0 + 'px'
                                       }else {
                                         element.style.top = 92 + 'px'
                                       }
@@ -200,7 +200,7 @@ header.header {
                                       element.classList.remove('stick')
                                       element.style.position = 'inherit' // regain the flow
                                       element.style.top = 0 + 'px'
-                                      element.style.marginTop = -97 + 'px'
+                                      element.style.marginTop = -48 + 'px'
                                       // reset the padding if we added it
                                       // document.body.style.paddingTop = '0px'
               
