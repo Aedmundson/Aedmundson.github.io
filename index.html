@@ -16,7 +16,6 @@ header.header {
     transition: all 0.5s ease-out;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    top: -97px;
 }
 
 .header ul, .header li {
@@ -185,7 +184,7 @@ header.header {
                                       // We can't apply the css style to all, so we disable
                                       element.classList.add('stick')
                                       element.style.position= 'fixed'
-                                      element.style.top = offset - variableOffset + 92 + 'px'
+                                      element.style.top = 92 + 'px'
                                       element.style.width = 100 + '%'
               
                                       //  We add a padding-top to compensiate the header's space
@@ -197,6 +196,7 @@ header.header {
                                   } else if(scroll <= offsetToUse && isSticked){
                                       element.classList.remove('stick')
                                       element.style.position = 'inherit' // regain the flow
+                                      element.style.top = 0 + 'px'
                                       // reset the padding if we added it
                                       // document.body.style.paddingTop = '0px'
               
