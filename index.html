@@ -5,89 +5,12 @@
         * {
     box-sizing: border-box;
 }
-html, body {
-    margin:0;
-    padding:0;
-    overflow-x: hidden;
-}
 
-body {
-    font-size: 16px;
-    line-height: 1.7rem;
-    font-family: "Roboto", Anton, verdana, sans-serif;
-    background-color: #efefef;
-    color: #555;
-    min-height: 3000px;
-}
-
-a {
-    text-decoration: none;
-    color: orange;
-}
-
-p {
-    margin-bottom: 2.5rem;
-}
 
 /*STICK CLASS*/
 .stick {
     /*position: fixed;*/
 }                                                                                                                                                                                                                                                                                                                  
-.pinkzone {
-    background-color: pink;
-    background: linear-gradient(to right, pink, orange);
-    background: linear-gradient(180deg, #552660,#2f0045);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    /*padding: 19rem 0;*/
-    min-height: 50vh;
-    margin: 0;
-    padding: 5rem 0;
-
-    text-align: center;
-    font-size: 2rem;
-    color: pink;
-}
-
-header.header {
-    margin:0;
-    padding:0;
-    background-color: white;
-    box-shadow: 0px 2px 7px #ddd;
-    transition: all 0.5s ease-out;
-}
-
-.header ul, .header li {
-    margin:0;
-    padding: 0;
-    list-style-type: none;
-}
-
-.header ul li:hover {
-    background: linear-gradient(180deg, #2f0045, #552660);
-    transition: all 1s ease-in-out;
-}
-.header ul {
-    display: flex;
-    justify-content: center;
-}
-.header ul a {
-    display: block;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    border-right: 1px solid #ddd;
-    color: pink;
-    transition: all 0.3s ease-out;
-}
-
-.header ul a:hover {
-    color: orange;
-}
-.header ul li:first-child a {
-        border-left: 1px solid #ddd;
-}
 
 .container {
     display: flex;
@@ -104,28 +27,6 @@ header.header {
     padding: 35px;
 }
 
-.social {
-    margin-top: 100px;
-    width: 20%;
-}
-
-.social ul, li{
-    margin: 0;
-    padding: 0;
-}
-
-.social li {
-    list-style-type: none;
-    display: inline-block;
-}
-.social li a {
-    display: block;
-    border-radius: 25px;
-    padding: 0.3rem 0.7rem;
-    border: 1px solid lightblue;
-    color: lightblue;
-
-}
 .stickable {
     position: relative;
     background-color: #fff;
@@ -150,33 +51,8 @@ header.header {
     padding: 0.7rem 1rem;
 }
 
-footer {
-    text-align: center;
-    width: 40%;
-    margin: 10px auto;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-}
 
 @media screen and (max-width: 780px) {
-    .pinkzone {
-        padding: 1rem 0;
-        min-height: 20vh;
-    }
-    header.header {
-        width: 100%;
-        z-index: 2;
-    }
-
-    .header ul li:last-child a {
-        border: 0!important;
-    }
-    .header ul li:first-child a {
-        border-left: 0;
-    }
-    .header ul a {
-        font-size: 100%;
-    }
 
     .container {
         width: 100%;
@@ -207,19 +83,12 @@ footer {
         width: 100%;
     }
 
-    footer {
-        width: 100%;
-    }
 }
       </style>
 
 
     </head>
     <body>
-            <div class="pinkzone">
-                <p>Pink zone</p>
-                (<small>Scroll the page</small>)
-            </div>
             <header class="header" data-sticky>
                 <ul>
                     <li><a href="">Logo.</a></li>
@@ -243,29 +112,7 @@ footer {
                         </ul>
                     </div>
                 </div>
-                <div class="content">
-                    <h2>Let's do some sticking with Javascript</h2>
-                    <p>Once the header is fixed, it goes out of the document normal flow. A behavior you probably know from CSS. Any element floated, positioned absoluetely or fixed looses its space and therefor create an empty hole. If you keep it that way, you will notice that the bellow content jumps up a bit. Precisely, it jumps of `b` pixels which is the height of the header. It becomes like the header element has been removed.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sed quos explicabo, inventore excepturi eligendi, facilis odio ullam at consectetur totam sunt saepe, eaque repellendus ipsum modi dolore sit ratione?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolorem ab voluptatum expedita pariatur, at perspiciatis necessitatibus culpa accusantium hic iste minus, ratione iure est excepturi officiis inventore consequatur quos.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolorem ab voluptatum expedita pariatur, at perspiciatis necessitatibus culpa accusantium hic iste minus, ratione iure est excepturi officiis inventore consequatur quos.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt molestias laboriosam, deleniti dolor blanditiis necessitatibus cum maxime? Amet in, ullam voluptates qui ipsum consectetur vero quia debitis id dicta, minima?</p>
-                </div>
-                <div class="social">
-                    <div class="stickable" data-sticky>
-                        <h3>Share</h3>
-                        <ul>
-                            <li><a href="">Twitter</a></li>
-                            <li><a href="">Facebook</a></li>
-                        </ul>
-                    </div>
-                    <div class="stickable" data-sticky data-offset="595"> 
-                        Ads
-                    </div>
-                </div>
-            </div>
-
-            <footer>© 2018 all rights reserved - Designed by <a href="http://zooboole.me" target="_blank">zooboole</a></footer>
+                
             <script type="text/javascript">
 
               (function(){
