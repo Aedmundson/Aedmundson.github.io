@@ -1,75 +1,336 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+    <head>
+      <style>
+        * {
+    box-sizing: border-box;
+}
+html, body {
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
 
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+body {
+    font-size: 16px;
+    line-height: 1.7rem;
+    font-family: "Roboto", Anton, verdana, sans-serif;
+    background-color: #efefef;
+    color: #555;
+    min-height: 3000px;
+}
 
-  <script>
-    $(document).ready(function(){
-  
-  $(window).on('scroll',function() {
-    var scrolltop = $(this).scrollTop();
+a {
+    text-decoration: none;
+    color: orange;
+}
 
-    var $nav = $(".c-secondary-nav");
-    if(scrolltop >= $nav.offset().top + $nav.height()) {
-      $('.c-secondary-nav__fixed').fadeIn(250);
-    }
-    else {
-      $('.c-secondary-nav__fixed').css("display","none");
-    }
-  });
-});
-  </script>
-</head>
+p {
+    margin-bottom: 2.5rem;
+}
 
-<body>
-  <style>
-    .c-secondary-nav__fixed {
-      position: fixed;
-      display: none;
+/*STICK CLASS*/
+.stick {
+    /*position: fixed;*/
+}                                                                                                                                                                                                                                                                                                                  
+.pinkzone {
+    background-color: pink;
+    background: linear-gradient(to right, pink, orange);
+    background: linear-gradient(180deg, #552660,#2f0045);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /*padding: 19rem 0;*/
+    min-height: 50vh;
+    margin: 0;
+    padding: 5rem 0;
+
+    text-align: center;
+    font-size: 2rem;
+    color: pink;
+}
+
+header.header {
+    margin:0;
+    padding:0;
+    background-color: white;
+    box-shadow: 0px 2px 7px #ddd;
+    transition: all 0.5s ease-out;
+}
+
+.header ul, .header li {
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header ul li:hover {
+    background: linear-gradient(180deg, #2f0045, #552660);
+    transition: all 1s ease-in-out;
+}
+.header ul {
+    display: flex;
+    justify-content: center;
+}
+.header ul a {
+    display: block;
+    padding: 0.7rem 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-right: 1px solid #ddd;
+    color: pink;
+    transition: all 0.3s ease-out;
+}
+
+.header ul a:hover {
+    color: orange;
+}
+.header ul li:first-child a {
+        border-left: 1px solid #ddd;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.content {
+    width: 40%;
+    margin: 10px auto;
+    background-color: white;
+    padding: 35px;
+}
+
+.social {
+    margin-top: 100px;
+    width: 20%;
+}
+
+.social ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+.social li {
+    list-style-type: none;
+    display: inline-block;
+}
+.social li a {
+    display: block;
+    border-radius: 25px;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid lightblue;
+    color: lightblue;
+
+}
+.stickable {
+    position: relative;
+    background-color: #fff;
+    padding: 1.5rem;
+}
+
+.table-content {
+    width: 20%;
+}
+
+.table-content ul {
+    margin:0;
+    padding:0;
+}
+
+.table-content ul li {
+    list-style-type: none;
+}
+
+.table-content ul li a {
+    display: block;
+    padding: 0.7rem 1rem;
+}
+
+footer {
+    text-align: center;
+    width: 40%;
+    margin: 10px auto;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 780px) {
+    .pinkzone {
+        padding: 1rem 0;
+        min-height: 20vh;
     }
-    .c-secondary-nav {
-      display:block;
+    header.header {
+        width: 100%;
+        z-index: 2;
     }
-    .c-secondary-nav, .c-secondary-nav__fixed {
-      width: 100%;
-      background: #F9FAFA;
-      padding: 15px 0;
-      color: #1D252C;
-      /* position: fixed; */
-      top: 0px;
-      border-bottom: 1px solid #D9D9D9;
+
+    .header ul li:last-child a {
+        border: 0!important;
     }
-    .c-secondary-nav ul, .c-secondary-nav__fixed ul {
-      display: flex;
-      align-content: space-between;
-      max-width: 1440px;
-      margin: 0 auto;
+    .header ul li:first-child a {
+        border-left: 0;
     }
-    .c-secondary-nav li, .c-secondary-nav__fixed li {
-      flex-wrap: nowrap;
-      width: 25%;
-      list-style: none;
+    .header ul a {
+        font-size: 100%;
     }
-  </style>
-<div class="c-secondary-nav">
-  <ul>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-  </ul>
-</div>
-<div class="c-secondary-nav__fixed">
-  <ul>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-    <li>Test</li>
-  </ul>
-</div>
-</body>
+
+    .container {
+        width: 100%;
+        flex-flow: row wrap;
+    }
+    .content {
+        width: 100%;
+    }
+    .table-content {
+        width: 100%;
+        margin-top: 10px;
+        z-index: 0;
+    }
+    .table-content ul {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+    }
+    .table-content ul a {
+        display: block;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .stickable, .social {
+        background-color: #e84393;
+        color: #ffffff;
+        z-index: 6;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+      </style>
+
+
+    </head>
+    <body>
+            <div class="pinkzone">
+                <p>Pink zone</p>
+                (<small>Scroll the page</small>)
+            </div>
+            <header class="header" data-sticky>
+                <ul>
+                    <li><a href="">Logo.</a></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </header>
+            <div class="container">
+                <div class="table-content">
+                    <div class="stickable"  data-sticky data-offset="550">
+                        <h3>Table of content</h3>
+                        <ul>
+                            <li><a href="">Link 1</a></li>
+                            <li><a href="">Link 2</a></li>
+                            <li><a href="">Link 3</a></li>
+                            <li><a href="">Link 4</a></li>
+                            <li><a href="">Link 5</a></li>
+                            <li><a href="">Link 6</a></li>
+                            <li><a href="">Link 7</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>Let's do some sticking with Javascript</h2>
+                    <p>Once the header is fixed, it goes out of the document normal flow. A behavior you probably know from CSS. Any element floated, positioned absoluetely or fixed looses its space and therefor create an empty hole. If you keep it that way, you will notice that the bellow content jumps up a bit. Precisely, it jumps of `b` pixels which is the height of the header. It becomes like the header element has been removed.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sed quos explicabo, inventore excepturi eligendi, facilis odio ullam at consectetur totam sunt saepe, eaque repellendus ipsum modi dolore sit ratione?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolorem ab voluptatum expedita pariatur, at perspiciatis necessitatibus culpa accusantium hic iste minus, ratione iure est excepturi officiis inventore consequatur quos.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolorem ab voluptatum expedita pariatur, at perspiciatis necessitatibus culpa accusantium hic iste minus, ratione iure est excepturi officiis inventore consequatur quos.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt molestias laboriosam, deleniti dolor blanditiis necessitatibus cum maxime? Amet in, ullam voluptates qui ipsum consectetur vero quia debitis id dicta, minima?</p>
+                </div>
+                <div class="social">
+                    <div class="stickable" data-sticky>
+                        <h3>Share</h3>
+                        <ul>
+                            <li><a href="">Twitter</a></li>
+                            <li><a href="">Facebook</a></li>
+                        </ul>
+                    </div>
+                    <div class="stickable" data-sticky data-offset="595"> 
+                        Ads
+                    </div>
+                </div>
+            </div>
+
+            <footer>© 2018 all rights reserved - Designed by <a href="http://zooboole.me" target="_blank">zooboole</a></footer>
+            <script type="text/javascript">
+
+              (function(){
+                  "use strict"
+                  console.log('%c Ready. Scroll Now!', 'color:darkred')
+              
+                  // Get the navigation element
+                  var elements = document.querySelectorAll('[data-sticky]')
+              
+                      for (var i = 0; i < elements.length; i++) {
+                          (function(element){
+              
+                              var offset         = element.offsetTop // automatically calculated offset
+                              var variableOffset = parseInt(element.getAttribute('data-offset')) || offset // offset defined in HTML data-offset
+                              var rect           = element.getBoundingClientRect()
+              
+                              const offsetToUse  = variableOffset
+              
+                              // Create a virtual element
+                              var virtualElement = document.createElement('div')
+              
+                              // Style it by giving it the height of the header
+                              virtualElement.style.height = parseInt(rect.height) + 'px';
+              
+                              // Create the function to be called on scroll
+                              var stick = function () {
+                                  // Get the scroll
+                                  var scroll = window.scrollY
+                                  // check if the body element already has the stick class
+                                  var isSticked = element.classList.contains('stick')
+              
+                                  // We do the operation if only the body element doesn't have the stick class
+                                 // otherwise the scroll event consumes a lot of resourses
+                                  if ( scroll >= offsetToUse && !isSticked) {
+                                      // We can't apply the css style to all, so we disable
+                                      element.classList.add('stick')
+                                      element.style.position= 'fixed'
+                                      element.style.top = offset - variableOffset + 'px'
+                                      element.style.width = parseInt(rect.width) + 'px'
+              
+                                      //  We add a padding-top to compensiate the header's space
+                                      // document.body.style.paddingTop = parseInt(rect.height) + 'px'
+              
+                                      // Using virtual element to replace of floating object
+                                      element.parentNode.insertBefore(virtualElement, element)
+              
+                                  } else if(scroll <= offsetToUse && isSticked){
+                                      element.classList.remove('stick')
+                                      element.style.position = 'inherit' // regain the flow
+                                      // reset the padding if we added it
+                                      // document.body.style.paddingTop = '0px'
+              
+                                      //  Removing the virtual element
+                                      var formerFirstChild = element.parentNode.removeChild(virtualElement);
+                                  }
+              
+                              }
+              
+                              // listen to the scroll
+                              window.addEventListener('scroll', stick)
+                          })(elements[i])
+              
+                      }
+              
+              })()
+                    </script>
+    </body>
 </html>
