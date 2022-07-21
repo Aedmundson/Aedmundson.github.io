@@ -33,14 +33,6 @@
           htmlArray.push(htmlinner);
 
           h2[i].setAttribute("id", i);
-          // h2[i].setAttribute("data-section", i);
-
-          // const linkID = document.getElementById('anchor_'+ i);
-
-          // linkID.addEventListener('click', () => {
-          //   scrollTo(document.getElementById(i));
-          //   linkID.classList.add('active');
-          // });
         }
 
         var htmljoin = htmlArray.join();
@@ -51,23 +43,15 @@
         elem.innerHTML = htmlpre + htmlfinal + htmlpost;
 
         // grab target element reference
-        const target = document.querySelectorAll(".header ul li");
+        const target = document.querySelectorAll(".header-link");
 
         // insert the element before target element
-        target[0].appendChild(elem, target[0]);
+        
 
-        const links = document.querySelectorAll(".sidebar-menu a");
-        for (var i = 0; i < links.length; i++) {
-          links[i].addEventListener('click', function (event) {
-
-            if (menu.classList.contains('mobile-active')) {
-              menu.classList.remove('mobile-active');
-            } else {
-              menu.classList.add('mobile-active');
-            }
-
-          });
+        for (var i = 0; i < target.length; i++) {
+          target[i].appendChild(elem, target[i]);
         }
+
       }, "500")
   })()
   
