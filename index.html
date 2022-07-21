@@ -2,10 +2,6 @@
 <html>
     <head>
       <style>
-        * {
-    box-sizing: border-box;
-}
-
 
 /*STICK CLASS*/
 .stick {
@@ -18,6 +14,9 @@ header.header {
     background-color: white;
     box-shadow: 0px 2px 7px #ddd;
     transition: all 0.5s ease-out;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    top: -97px;
 }
 
 .header ul, .header li {
@@ -27,8 +26,8 @@ header.header {
 }
 
 .header ul li:hover {
-    background: linear-gradient(180deg, #2f0045, #552660);
     transition: all 1s ease-in-out;
+    background-color: #1CE783;
 }
 .header ul {
     display: flex;
@@ -36,19 +35,16 @@ header.header {
 }
 .header ul a {
     display: block;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    border-right: 1px solid #ddd;
-    color: pink;
-    transition: all 0.3s ease-out;
+    padding: 20px;
+    font-size: 1rem;
+    color: #1D252C;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+    font-family: inherit;
 }
 
 .header ul a:hover {
-    color: orange;
-}
-.header ul li:first-child a {
-        border-left: 1px solid #ddd;
+    text-decoration: underline;
 }
 
 .container {
@@ -145,10 +141,10 @@ header.header {
     <body>
             <header class="header" data-sticky>
                 <ul>
-                    <li><a href="">Logo.</a></li>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="">About this report</a></li>
+                    <li><a href="">State of observability</a></li>
+                    <li><a href="">Future of observability</a></li>
+                    <li><a href="">Summary, tips, and outcomes to expect</a></li>
                 </ul>
             </header>
                 
@@ -189,8 +185,8 @@ header.header {
                                       // We can't apply the css style to all, so we disable
                                       element.classList.add('stick')
                                       element.style.position= 'fixed'
-                                      element.style.top = offset - variableOffset + 'px'
-                                      element.style.width = parseInt(rect.width) + 'px'
+                                      element.style.top = offset - variableOffset + 92 + 'px'
+                                      element.style.width = 100 + '%'
               
                                       //  We add a padding-top to compensiate the header's space
                                       // document.body.style.paddingTop = parseInt(rect.height) + 'px'
