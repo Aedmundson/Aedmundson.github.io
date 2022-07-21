@@ -42,6 +42,9 @@ header.header {
     font-family: inherit;
 }
 
+.header .active {
+  background-color: #1ce783;
+}
 
 .header ul a:hover {
     text-decoration: underline;
@@ -52,7 +55,7 @@ header.header {
     justify-content: space-around;
     align-content: stretch;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 .content {
@@ -180,7 +183,7 @@ header.header {
             <header class="header" data-sticky>
                 <ul>
                     <li class="c-select">Select page →</li>
-                    <li><a href="">About this report</a></li>
+                    <li class="active"><a href="">About this report</a></li>
                     <li><a href="">State of observability</a></li>
                     <li><a href="">Future of observability</a></li>
                     <li><a href="">Summary, tips, and outcomes to expect</a></li>
