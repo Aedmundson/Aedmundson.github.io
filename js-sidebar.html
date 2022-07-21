@@ -22,7 +22,7 @@
 
         // create new element
         const elem = document.createElement('div');
-        elem.classList.add('large:col-span-4', 'column--index-1', 'grid', 'gap-4', 'grid-cols-1', 'col-sticky');
+        elem.classList.add('large:col-span-2', 'column--index-1', 'grid', 'gap-2', 'grid-cols-1', 'col-sticky');
         // add text
         var htmlpre = '<div class="sidebar-menu"><ul>';
         const h2 = document.querySelectorAll(".p02-text h2");
@@ -51,10 +51,17 @@
         elem.innerHTML = htmlpre + htmlfinal + htmlpost;
 
         // grab target element reference
-        const target = document.querySelectorAll("[data-layout='8']");
+        const target = document.querySelectorAll(".page__content");
 
         // insert the element before target element
-        target[0].insertBefore(elem, target[0].firstChild)
+        target[0].appendChild(elem, target[0]);
+        const header = document.querySelectorAll(".nr-fullbleed-container");
+        var HeaderOffset = header.offsetTop;
+
+        
+        elem.style.top = HeaderOffset + 200 + 'px';
+
+
 
         const links = document.querySelectorAll(".sidebar-menu a");
         for (var i = 0; i < links.length; i++) {
