@@ -1,0 +1,20 @@
+<script type="text/javascript">
+
+  (function(){
+      "use strict"
+      console.log('%c Ready. Scroll Now!', 'color:darkred')
+
+      // create new element
+      const elem = document.createElement('div');
+      elem.classList.add('large:col-span-4', 'column--index-1', 'grid', 'gap-4', 'grid-cols-1', 'col-sticky');
+      // add text
+      elem.innerText = '<div class="test">test</div>';
+
+      // grab target element reference
+      const target = document.getElementsByClassName('gap-8');
+
+      // insert the element before target element
+      target.parentNode.insertBefore(elem, target);
+  });
+  
+</script>
