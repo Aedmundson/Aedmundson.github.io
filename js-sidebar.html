@@ -14,7 +14,23 @@
         const elem = document.createElement('div');
         elem.classList.add('large:col-span-4', 'column--index-1', 'grid', 'gap-4', 'grid-cols-1', 'col-sticky');
         // add text
-        elem.innerHTML = '<div class="sidebar-menu"><ul><li><a href="#1">Executive summary</a></li><li><a href="#2">Definitions</a></li><li><a href="">Methodology</a></li><li><a href="">Respondent demographics</a></li><li><a href="">Respondent firmographics</a></li></ul></div>';
+        var htmlpre = '<div class="sidebar-menu"><ul>';
+        const h2 = document.querySelectorAll("h2");
+        
+        var htmlArray = [];
+        for (var i = 0; i < h2.length; i++) {
+          var htmlinner = '<li><a href="#'+ i +'">'+ h2[i].innerText +'</a></li>';
+          htmlArray.push(htmlinner);
+
+          h2[i].setAttribute("id", i);
+        }
+
+        var htmljoin = htmlArray.join();
+        var htmlfinal = htmljoin.replace(/,/g,'');
+        
+        var htmlpost = '</ul></div>';
+
+        elem.innerHTML = htmlpre + htmlfinal + htmlpost;
 
         // grab target element reference
         const target = document.querySelectorAll("[data-layout='8']");
