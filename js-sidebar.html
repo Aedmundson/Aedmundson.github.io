@@ -17,10 +17,10 @@
       elem.innerText = '<div class="test">test</div>';
 
       // grab target element reference
-      const target = document.getElementsByClassName('gap-8');
+      const target = document.getElementsByClassName('gap-y-8');
 
       // insert the element before target element
-      target.parentNode.insertBefore(elem, target);
+      target.parentNode.appendChild(elem, target);
   })()
   
 </script>
