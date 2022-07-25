@@ -202,12 +202,13 @@ header.header {
                   var title = document.querySelector("meta[property='og:title']").getAttribute('content');
                   console.log(title);
                   var menuitem = document.querySelectorAll('.header-link');
-                  var dataTitle = menuitem.getAttribute('data-title');
                   
-                  for (var i = 0; i < dataTitle.length; i++) {
-                    console.log(dataTitle[i]);
-                    if (title === dataTitle[i]) {
-                      var usingDt = document.querySelector('[data-title="'+ dataTitle[i] +'"]');
+                  for (var i = 0; i < menuitem.length; i++) {
+                    
+                    var dataTitle = menuitem[i].getAttribute('data-title');
+                    console.log(dataTitle);
+                    if (title === dataTitle) {
+                      var usingDt = document.querySelector('[data-title="'+ dataTitle +'"]');
                       usingDt.classList.add('active');
                     }
                   }
