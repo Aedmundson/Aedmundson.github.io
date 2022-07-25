@@ -189,7 +189,7 @@ header.header {
           <li class="c-select">Select section →</li>
           <li class="header-link" data-title="About this report"><a href="https://live-d9newrelic.pantheonsite.io/node/5328#0">About this report</a></li>
           <li class="header-link" data-title="State of observability"><a href="https://live-d9newrelic.pantheonsite.io/node/5337#0">State of observability</a></li>
-          <li class="header-link" data-title="Future of observabilit"><a href="">Future of observability</a></li>
+          <li class="header-link" data-title="Future of observability"><a href="">Future of observability</a></li>
           <li class="header-link" data-title="Summary, tips, and outcomes to expect"><a href="">Summary, tips, and outcomes to expect</a></li>
         </ul>
       </header>
@@ -200,7 +200,7 @@ header.header {
                   "use strict"
                   console.log('%c Ready. Scroll Now!', 'color:darkred')
 
-                  var title = document.title;
+                  var title = document.querySelector("meta[property='og:title']").getAttribute('content');
                   console.log(title);
                   var menuitem = document.querySelector('.header-link');
                   var dataTitle = menuitem.getAttribute('data-title');
