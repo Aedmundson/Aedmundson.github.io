@@ -181,23 +181,31 @@ header.header {
 
     </head>
     <body>
-            <header class="header" data-sticky>
-              
-                <ul>
-                    <div class="o11y-logo"></div>
-                    <li class="c-select">Select section →</li>
-                    <li class="header-link active"><a href="">About this report</a></li>
-                    <li class="header-link"><a href="">State of observability</a></li>
-                    <li class="header-link"><a href="">Future of observability</a></li>
-                    <li class="header-link"><a href="">Summary, tips, and outcomes to expect</a></li>
-                </ul>
-            </header>
+      <header class="header" data-sticky>
+        <ul>
+          <div class="o11y-logo"></div>
+          <li class="c-select">Select section →</li>
+          <li class="header-link" data-title="About this report"><a href="">About this report</a></li>
+          <li class="header-link" data-title="State of observability"><a href="">State of observability</a></li>
+          <li class="header-link" data-title="Future of observabilit"><a href="">Future of observability</a></li>
+          <li class="header-link" data-title="Summary, tips, and outcomes to expect"><a href="">Summary, tips, and outcomes to expect</a></li>
+        </ul>
+      </header>
                 
             <script type="text/javascript">
 
               (function(){
                   "use strict"
                   console.log('%c Ready. Scroll Now!', 'color:darkred')
+
+                  var title = document.title;
+                  var menuitem = document.querySelector('.header-link');
+                  var dataTitle = menuitem.getAttribute('data-title');
+                  
+                  if (title === dataTitle) {
+                    dataTitle.classList.add('active');
+                  }
+                  
 
 
                   var select = document.querySelector('.c-select');
