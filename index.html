@@ -6,7 +6,12 @@
 /*STICK CLASS*/
 .stick {
     /*position: fixed;*/
-}         
+}
+
+.p02-text h2 {
+  padding: 200px;
+  margin-top: -200px;
+}
 
 .gin--edit-form header.header{
   display: none !important;
@@ -100,7 +105,7 @@ header.header {
     }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 991px) {
 
   .sub-nav {
     display: none;
@@ -222,7 +227,7 @@ header.header {
                                       element.style.width = 100 + 'vw'
                                       element.style.marginTop = 0 + 'px'
 
-                                      let isMobile = window.matchMedia("only screen and (max-width: 780px)").matches;
+                                      let isMobile = window.matchMedia("only screen and (max-width: 991px)").matches;
 
                                       if (isMobile) {
                                         element.style.top = 0 + 'px'
