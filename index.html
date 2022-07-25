@@ -203,7 +203,7 @@ header.header {
                   var title = document.querySelector("meta[property='og:title']").getAttribute('content');
                   console.log(title);
                   var menuitem = document.querySelector('.header-link');
-                  var dataTitle = menuitem.querySelectorAll('[data-title]');
+                  var dataTitle = menuitem.getAttribute('data-title');
                   
                   for (var i = 0; i < dataTitle.length; i++) {
                     console.log(dataTitle[i]);
