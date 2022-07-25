@@ -203,11 +203,14 @@ header.header {
                   var title = document.querySelector("meta[property='og:title']").getAttribute('content');
                   console.log(title);
                   var menuitem = document.querySelector('.header-link');
-                  var dataTitle = menuitem.getAttribute('data-title');
+                  document.querySelectorAll('[data-title]')
                   
-                  if (title === dataTitle) {
-                    dataTitle.classList.add('active');
+                  for (var i = 0; i < dataTitle.length; i++) {
+                    if (title === dataTitle[i]) {
+                      dataTitle[i].classList.add('active');
+                    }
                   }
+                  
                   
 
 
