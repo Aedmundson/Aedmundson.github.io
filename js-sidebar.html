@@ -40,6 +40,13 @@
         // insert the element before target element
         
           target[0].appendChild(elem, target[0]);
+        
+
+          const link = document.querySelectorAll(".header-link a");
+          for (var i = 0; i < link.length; i++) {
+
+            link[i].setAttribute("target", "_self");
+          }
 
       }, "500")
   })()
