@@ -206,8 +206,10 @@ header.header {
                   var dataTitle = document.querySelectorAll('[data-title]');
                   
                   for (var i = 0; i < dataTitle.length; i++) {
+                    console.log(dataTitle[i]);
                     if (title === dataTitle[i]) {
-                      dataTitle[i].classList.add('active');
+                      var usingDt = document.querySelector('[data-title="'+ dataTitle[i] +'"]');
+                      usingDt.classList.add('active');
                     }
                   }
                   
