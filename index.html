@@ -11,12 +11,16 @@
 html { scroll-behavior: smooth; }
 
 .p02-text h2 {
-  padding-top: 200px;
-  margin-top: -200px;
+  padding-top: 100px;
+  margin-top: -100px;
 }
 
 .gin--edit-form header.header{
   display: none !important;
+}
+
+.page__header {
+  position:  relative !important;
 }
 
 header.header {
@@ -66,7 +70,7 @@ header.header {
 
 .c-select {
   display: none;
-  padding: 12px 20px;
+  padding: 20px;
   font-size: 1rem;
   color: #1D252C;
   transition: all 0.2s ease-out;
@@ -106,8 +110,22 @@ header.header {
       text-decoration: underline;
     }
 
+    .o11y-logo {
+      display: block;
+      width: 200px;
+      height: 100%;
+      margin: 20px;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 591.51 314.2'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%231d252c;%7D%3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M175.59,355.75c-51.26,0-87.64-38.1-87.64-94.57s36.38-94.57,87.64-94.57,87.65,38.11,87.65,94.57S226.86,355.75,175.59,355.75Zm0-35c28.06,0,45.73-22.52,45.73-59.59s-17.67-59.58-45.73-59.58-45.72,22.52-45.72,59.58S147.54,320.77,175.59,320.77Z' transform='translate(-87.95 -101.49)'/%3E%3Cpath class='cls-1' d='M364.83,101.49V351.94H320.49V179.43H260.56V146.52l24.25-2.08c31.18-2.77,44-13.51,46.42-42.95Z' transform='translate(-87.95 -101.49)'/%3E%3Cpath class='cls-1' d='M488.2,101.49V351.94H443.86V179.43H383.93V146.52l24.25-2.08c31.18-2.77,44-13.51,46.42-42.95Z' transform='translate(-87.95 -101.49)'/%3E%3Cpath class='cls-1' d='M540.55,415.68a111,111,0,0,1-17-1v-35a97.26,97.26,0,0,0,13.86,1c13.85,0,20.43-3.81,26.32-18.36l6.93-17L504.53,170.08h43.64l44.69,127.48,43.65-127.48h43L604.64,368.92C594.25,396.63,578.31,415.68,540.55,415.68Z' transform='translate(-87.95 -101.49)'/%3E%3C/svg%3E");
+
+    }
+
 
 @media screen and (max-width: 991px) {
+
+  .o11y-logo {
+    display: none;
+  }
 
   .sub-nav {
     display: none;
@@ -121,7 +139,7 @@ header.header {
     header.header {
         width: 100vw;
         z-index: 2;
-        height: 52px;
+        height: 68px;
         overflow: hidden;
     }
 
@@ -164,8 +182,10 @@ header.header {
     </head>
     <body>
             <header class="header" data-sticky>
+              
                 <ul>
-                    <li class="c-select">Select page →</li>
+                    <div class="o11y-logo"></div>
+                    <li class="c-select">Select section →</li>
                     <li class="header-link active"><a href="">About this report</a></li>
                     <li class="header-link"><a href="">State of observability</a></li>
                     <li class="header-link"><a href="">Future of observability</a></li>
@@ -229,13 +249,7 @@ header.header {
                                       element.style.width = 100 + 'vw'
                                       element.style.marginTop = 0 + 'px'
 
-                                      let isMobile = window.matchMedia("only screen and (max-width: 991px)").matches;
-
-                                      if (isMobile) {
-                                        element.style.top = 0 + 'px'
-                                      }else {
-                                        element.style.top = 92 + 'px'
-                                      }
+                                      element.style.top = 0 + 'px'
               
                                       //  We add a padding-top to compensiate the header's space
                                       // document.body.style.paddingTop = parseInt(rect.height) + 'px'
