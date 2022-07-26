@@ -52,7 +52,12 @@
           var id = url.substring(url.indexOf('#') + 1);
 
           const scrollLink = document.querySelector('#' + id[0]);
-          scrollLink.scrollIntoView();
+
+          if (scrollLink !== '#') {
+            var topDiv = scrollLink.offsetTop;
+            window.scroll({top: topDiv, left: 0, behavior: 'smooth'});
+          }
+
           console.log(id[0]);
 
        }, "500");
