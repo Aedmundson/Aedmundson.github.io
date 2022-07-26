@@ -32,8 +32,10 @@
 
         console.log(id[0]);
 
-        if (typeof id[0] !== '') {
+        if (typeof id[0] !== 'undefined') {
           window.location.hash = id[0];
+        } else {
+
         }
 
         var htmljoin = htmlArray.join();
