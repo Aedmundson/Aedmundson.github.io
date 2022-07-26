@@ -52,11 +52,8 @@
         var id = url.substring(url.indexOf('#') + 1);
 
         console.log(id[0]);
+        window.location.hash = id[0];
 
-        if (typeof id[0] !== 'undefined' || id[0] !== 'h') {
-          window.location.hash = id[0];
-        } else {
-        }
 
        }, "500")
   })()
