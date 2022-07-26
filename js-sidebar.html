@@ -61,7 +61,9 @@
         var id = url.substring(url.indexOf('#') + 1);
 
         console.log(id[0]);
-        window.location.hash = id[0];
+
+        const scrollLink = document.querySelector('#' + id[0]);
+        scrollLink.scrollIntoView();
   })()
   
 </script>
