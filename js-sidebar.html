@@ -42,7 +42,7 @@
           target[0].appendChild(elem, target[0]);
         
 
-          const link = document.querySelectorAll(".header-link a");
+          const link = document.querySelectorAll("a");
           for (var i = 0; i < link.length; i++) {
 
             link[i].setAttribute("target", "_self");
@@ -55,7 +55,13 @@
         window.location.hash = id[0];
 
 
-       }, "500")
+       }, "500");
+
+       var url = window.location.href;
+        var id = url.substring(url.indexOf('#') + 1);
+
+        console.log(id[0]);
+        window.location.hash = id[0];
   })()
   
 </script>
