@@ -28,12 +28,12 @@
         }
 
         var url = window.location.href;
-        var id = url.match(/\n#(.*)$/g) || [""];
+        var id = url.match(/(^|\W)(#[a-z\d][\w-]*)/ig) || [""];
 
         console.log(id);
 
         if (typeof id !== '') {
-          window.location.hash = 'anchor_'+ i;
+          window.location.hash = id;
         }
 
         var htmljoin = htmlArray.join();
