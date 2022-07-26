@@ -55,10 +55,8 @@
 
           const scrollLink = document.getElementById(id[0]);
 
-          if (typeof scrollLink !== 'undefined') {
-            var topDiv = scrollLink[0].offsetTop;
+            var topDiv = scrollLink.offsetTop;
             window.scroll({top: topDiv, left: 0, behavior: 'smooth'});
-          }
 
           console.log(id[0]);
 
