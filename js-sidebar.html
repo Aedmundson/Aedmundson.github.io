@@ -63,8 +63,12 @@
         console.log(id[0]);
 
         const scrollLink = document.querySelector('#' + id[0]);
-        scrollLink.scrollIntoView();
+        
   })()
+
+  window.addEventListener('load', function(event) {
+    scrollLink.scrollIntoView();
+  });
   
 </script>
 </body>
