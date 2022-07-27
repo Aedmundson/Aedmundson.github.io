@@ -30,7 +30,7 @@
         
         var htmlArray = [];
         for (var i = 0; i < h2.length; i++) {
-          var htmlinner = '<li><a href="#'+ i +'" id="anchor_'+ i +'" name="anchor_'+ i +'">'+ h2[i].innerText +'</a></li>';
+          var htmlinner = '<li><a href="#'+ i +'" id="anchor_'+ i +'" class="anchor-link" name="anchor_'+ i +'">'+ h2[i].innerText +'</a></li>';
           htmlArray.push(htmlinner);
 
           h2[i].setAttribute("id", i);
@@ -41,7 +41,7 @@
         
         var htmlpost = '</ul>';
 
-        elem.innerHTML = htmlpre + htmlfinal + htmlpost;
+        elem.innerHTML = htmlpre + htmlfinal + htmlpost;        
 
         // grab target element reference
         const target = document.querySelectorAll(".active");
@@ -59,8 +59,37 @@
 
             var topDiv = scrollLink.offsetTop;
             window.scroll({top: topDiv, left: 0, behavior: 'auto'}); 
+
+             // smooth scroll
+
+            scrollTo();
         
   })()
+
+
+function scrollTo() {
+	const links = document.querySelectorAll('.anchor-link');
+	links.forEach(each => (each.onclick = scrollAnchors));
+}
+
+function scrollAnchors(e, respond = null) {
+	const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+	e.preventDefault();
+	var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+	const targetAnchor = document.querySelector(targetID);
+	if (!targetAnchor) return;
+	const originalTop = distanceToTop(targetAnchor);
+	window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+	const checkIfDone = setInterval(function() {
+		const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+		if (distanceToTop(targetAnchor) === 0 || atBottom) {
+			targetAnchor.tabIndex = '-1';
+			targetAnchor.focus();
+			window.history.pushState('', '', targetID);
+			clearInterval(checkIfDone);
+		}
+	}, 100);
+}
   
 </script>
 </body>
