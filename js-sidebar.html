@@ -61,140 +61,147 @@
             window.scroll({top: topDiv, left: 0, behavior: 'auto'}); 
 
              // smooth scroll
-             
-initSmoothScrolling();
 
-function initSmoothScrolling() {
-  if (isCssSmoothSCrollSupported()) {
-    document.getElementById('css-support-msg').className = 'supported';
-    return;
-  }
+             setTimeout(() => {
 
-  var duration = 400;
+              var html = document.querySelector('html');
+              html.style.scrollBehavior = 'smooth';
+              
+            }, "500");
 
-  var pageUrl = location.hash ?
-    stripHash(location.href) :
-    location.href;
+// initSmoothScrolling();
 
-  delegatedLinkHijacking();
-  //directLinkHijacking();
+// function initSmoothScrolling() {
+//   if (isCssSmoothSCrollSupported()) {
+//     document.getElementById('css-support-msg').className = 'supported';
+//     return;
+//   }
 
-  function delegatedLinkHijacking() {
-    document.body.addEventListener('click', onClick, false);
+//   var duration = 400;
 
-    function onClick(e) {
-      if (!isInPageLink(e.target))
-        return;
+//   var pageUrl = location.hash ?
+//     stripHash(location.href) :
+//     location.href;
 
-      e.stopPropagation();
-      e.preventDefault();
+//   delegatedLinkHijacking();
+//   //directLinkHijacking();
 
-      jump(e.target.hash, {
-        duration: duration,
-        callback: function() {
-          setFocus(e.target.hash);
-        }
-      });
-    }
-  }
+//   function delegatedLinkHijacking() {
+//     document.body.addEventListener('click', onClick, false);
 
-  function directLinkHijacking() {
-    [].slice.call(document.querySelectorAll('a'))
-      .filter(isInPageLink)
-      .forEach(function(a) {
-        a.addEventListener('click', onClick, false);
-      });
+//     function onClick(e) {
+//       if (!isInPageLink(e.target))
+//         return;
 
-    function onClick(e) {
-      e.stopPropagation();
-      e.preventDefault();
+//       e.stopPropagation();
+//       e.preventDefault();
 
-      jump(e.target.hash, {
-        duration: duration,
-      });
-    }
+//       jump(e.target.hash, {
+//         duration: duration,
+//         callback: function() {
+//           setFocus(e.target.hash);
+//         }
+//       });
+//     }
+//   }
 
-  }
+//   function directLinkHijacking() {
+//     [].slice.call(document.querySelectorAll('a'))
+//       .filter(isInPageLink)
+//       .forEach(function(a) {
+//         a.addEventListener('click', onClick, false);
+//       });
 
-  function isInPageLink(n) {
-    return n.tagName.toLowerCase() === 'a' &&
-      n.hash.length > 0 &&
-      stripHash(n.href) === pageUrl;
-  }
+//     function onClick(e) {
+//       e.stopPropagation();
+//       e.preventDefault();
 
-  function stripHash(url) {
-    return url.slice(0, url.lastIndexOf('#'));
-  }
+//       jump(e.target.hash, {
+//         duration: duration,
+//       });
+//     }
 
-  function isCssSmoothSCrollSupported() {
-    return 'scrollBehavior' in document.documentElement.style;
-  }
+//   }
 
-  // Adapted from:
-  // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
-  function setFocus(hash) {
-    var element = document.getElementById(hash.substring(1));
+//   function isInPageLink(n) {
+//     return n.tagName.toLowerCase() === 'a' &&
+//       n.hash.length > 0 &&
+//       stripHash(n.href) === pageUrl;
+//   }
 
-    if (element) {
-      if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
-        element.tabIndex = -1;
-      }
+//   function stripHash(url) {
+//     return url.slice(0, url.lastIndexOf('#'));
+//   }
 
-      element.focus();
-    }
-  }
+//   function isCssSmoothSCrollSupported() {
+//     return 'scrollBehavior' in document.documentElement.style;
+//   }
 
-}
+//   // Adapted from:
+//   // https://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+//   function setFocus(hash) {
+//     var element = document.getElementById(hash.substring(1));
 
-function jump(target, options) {
-  var
-    start = window.pageYOffset,
-    opt = {
-      duration: options.duration,
-      offset: options.offset || 0,
-      callback: options.callback,
-      easing: options.easing || easeInOutQuad
-    },
-    distance = typeof target === 'string' ?
-    opt.offset + document.querySelector(target).getBoundingClientRect().top :
-    target,
-    duration = typeof opt.duration === 'function' ?
-    opt.duration(distance) :
-    opt.duration,
-    timeStart, timeElapsed;
+//     if (element) {
+//       if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
+//         element.tabIndex = -1;
+//       }
 
-  requestAnimationFrame(function(time) {
-    timeStart = time;
-    loop(time);
-  });
+//       element.focus();
+//     }
+//   }
 
-  function loop(time) {
-    timeElapsed = time - timeStart;
+// }
 
-    window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
+// function jump(target, options) {
+//   var
+//     start = window.pageYOffset,
+//     opt = {
+//       duration: options.duration,
+//       offset: options.offset || 0,
+//       callback: options.callback,
+//       easing: options.easing || easeInOutQuad
+//     },
+//     distance = typeof target === 'string' ?
+//     opt.offset + document.querySelector(target).getBoundingClientRect().top :
+//     target,
+//     duration = typeof opt.duration === 'function' ?
+//     opt.duration(distance) :
+//     opt.duration,
+//     timeStart, timeElapsed;
 
-    if (timeElapsed < duration)
-      requestAnimationFrame(loop)
-    else
-      end();
-  }
+//   requestAnimationFrame(function(time) {
+//     timeStart = time;
+//     loop(time);
+//   });
 
-  function end() {
-    window.scrollTo(0, start + distance);
+//   function loop(time) {
+//     timeElapsed = time - timeStart;
 
-    if (typeof opt.callback === 'function')
-      opt.callback();
-  }
+//     window.scrollTo(0, opt.easing(timeElapsed, start, distance, duration));
 
-  // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
-  function easeInOutQuad(t, b, c, d) {
-    t /= d / 2
-    if (t < 1) return c / 2 * t * t + b
-    t--
-    return -c / 2 * (t * (t - 2) - 1) + b
-  }
+//     if (timeElapsed < duration)
+//       requestAnimationFrame(loop)
+//     else
+//       end();
+//   }
 
-}
+//   function end() {
+//     window.scrollTo(0, start + distance);
+
+//     if (typeof opt.callback === 'function')
+//       opt.callback();
+//   }
+
+//   // Robert Penner's easeInOutQuad - http://robertpenner.com/easing/
+//   function easeInOutQuad(t, b, c, d) {
+//     t /= d / 2
+//     if (t < 1) return c / 2 * t * t + b
+//     t--
+//     return -c / 2 * (t * (t - 2) - 1) + b
+//   }
+
+// }
         
   })()
   
