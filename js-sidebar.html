@@ -56,7 +56,7 @@
           var id = url.substring(url.indexOf('#') + 1);
 
           const scrollLink = document.getElementById(id[0]);
-            if (scrollLink !== 'null'){
+            if (scrollLink){
               console.log(scrollLink);
               var topDiv = scrollLink.offsetTop;
               window.scroll({top: topDiv, left: 0, behavior: 'auto'}); 
