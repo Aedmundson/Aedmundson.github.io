@@ -64,8 +64,8 @@
 
         setTimeout(() => {
 
-          var html = document.getElementsByTagName('html');
-            html[0].style.scrollBehavior = 'smooth';
+          var selector = document.querySelector('body');
+            selector.style.scrollBehavior = 'smooth';
           }, "500");
         
   })()
