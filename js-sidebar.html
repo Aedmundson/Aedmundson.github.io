@@ -12,6 +12,15 @@
       
       setTimeout(() => {
 
+                // Change links to self
+                const link = document.querySelectorAll("a");
+          for (var i = 0; i < link.length; i++) {
+
+            link[i].setAttribute("target", "_self");
+          }
+
+      }, "100");
+
         // create new element
         const elem = document.createElement('div');
         elem.classList.add('sub-nav');
@@ -40,13 +49,6 @@
         // insert the element before target element
         
           target[0].appendChild(elem, target[0]);
-        
-        // Change links to self
-          const link = document.querySelectorAll("a");
-          for (var i = 0; i < link.length; i++) {
-
-            link[i].setAttribute("target", "_self");
-          }
 
           // scroll to element on load
 
@@ -56,13 +58,7 @@
           const scrollLink = document.getElementById(id[0]);
 
             var topDiv = scrollLink.offsetTop;
-            window.scroll({top: topDiv, left: 0, behavior: 'auto'});
-
-          console.log(id[0]);
-
-       }, "100");
-
-       
+            window.scroll({top: topDiv, left: 0, behavior: 'auto'}); 
         
   })()
   
