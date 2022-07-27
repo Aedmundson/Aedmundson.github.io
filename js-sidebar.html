@@ -10,7 +10,7 @@
   (function(){
       "use strict"
       
-      // setTimeout(() => {
+      setTimeout(() => {
 
         // create new element
         const elem = document.createElement('div');
@@ -56,11 +56,11 @@
           const scrollLink = document.getElementById(id[0]);
 
             var topDiv = scrollLink.offsetTop;
-            window.scroll({top: topDiv, left: 0});
+            window.scroll({top: topDiv, left: 0, behavior: 'auto'});
 
           console.log(id[0]);
 
-      //  }, "100");
+       }, "100");
 
        
         
