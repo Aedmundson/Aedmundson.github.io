@@ -30,7 +30,7 @@
         
         var htmlArray = [];
         for (var i = 0; i < h2.length; i++) {
-          var htmlinner = '<li><a href="#'+ i +'" id="anchor_'+ i +'" class="anchor-link" name="anchor_'+ i +'">'+ h2[i].innerText +'</a></li>';
+          var htmlinner = '<li><a href="#'+ i +'" id="anchor_'+ i +'" class="anchor-link">'+ h2[i].innerText +'</a></li>';
           htmlArray.push(htmlinner);
 
           h2[i].setAttribute("id", i);
@@ -63,11 +63,8 @@
              // smooth scroll
 
             scrollTo();
-        
-  })()
 
-
-function scrollTo() {
+            function scrollTo() {
 	const links = document.querySelectorAll('.anchor-link');
 	links.forEach(each => (each.onclick = scrollAnchors));
 }
@@ -90,6 +87,8 @@ function scrollAnchors(e, respond = null) {
 		}
 	}, 100);
 }
+        
+  })()
   
 </script>
 </body>
