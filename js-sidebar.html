@@ -62,16 +62,13 @@
 
              // smooth scroll
 
-            scrollTo();
 
-            function scrollTo() {
 	const links = document.querySelectorAll('.anchor-link');
-	links.forEach(each => (each.onclick = scrollAnchors));
-}
 
-function scrollAnchors(e, respond = null) {
-	const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-	e.preventDefault();
+	for (var i = 0; i < links.length; i++) {
+  
+  const distanceToTop = links[i].getBoundingClientRect().top;
+	links[i].preventDefault();
 	var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
 	const targetAnchor = document.querySelector(targetID);
 	if (!targetAnchor) return;
