@@ -85,7 +85,7 @@
         background-color: #f1f2f2;
       }
 
-      .header .active a{
+      .header .active a {
         color: #1d252c;
       }
 
@@ -336,55 +336,55 @@
         }, "100");
 
         setTimeout(() => {
+          // create new element
+          const elem = document.createElement("div");
+          elem.classList.add("sub-nav");
+          // add text
+          var htmlpre = "<ul>";
+          const h2 = document.querySelectorAll(".p02-text h2");
 
-        // create new element
-        const elem = document.createElement("div");
-        elem.classList.add("sub-nav");
-        // add text
-        var htmlpre = "<ul>";
-        const h2 = document.querySelectorAll(".p02-text h2");
+          var htmlArray = [];
+          for (var i = 0; i < h2.length; i++) {
+            var htmlinner =
+              '<li><a href="#' +
+              i +
+              '" id="anchor_' +
+              i +
+              '" class="anchor-link">' +
+              h2[i].innerText +
+              "</a></li>";
+            htmlArray.push(htmlinner);
 
-        var htmlArray = [];
-        for (var i = 0; i < h2.length; i++) {
-          var htmlinner =
-            '<li><a href="#' +
-            i +
-            '" id="anchor_' +
-            i +
-            '" class="anchor-link">' +
-            h2[i].innerText +
-            "</a></li>";
-          htmlArray.push(htmlinner);
+            h2[i].setAttribute("id", i);
+          }
 
-          h2[i].setAttribute("id", i);
-        }
+          var htmljoin = htmlArray.join();
+          var htmlfinal = htmljoin.replace(/,/g, "");
 
-        var htmljoin = htmlArray.join();
-        var htmlfinal = htmljoin.replace(/,/g, "");
+          var htmlpost = "</ul>";
 
-        var htmlpost = "</ul>";
+          elem.innerHTML = htmlpre + htmlfinal + htmlpost;
 
-        elem.innerHTML = htmlpre + htmlfinal + htmlpost;
+          // grab target element reference
+          const target = document.querySelectorAll(".active");
 
-        // grab target element reference
-        const target = document.querySelectorAll(".active");
+          // insert the element before target element
 
-        // insert the element before target element
+          target[0].appendChild(elem, target[0]);
+        }, "200");
 
-        target[0].appendChild(elem, target[0]);
+          // scroll to element on load
 
-        // scroll to element on load
+          var url = window.location.href;
+          var id = url.substring(url.indexOf("#") + 1);
 
-        var url = window.location.href;
-        var id = url.substring(url.indexOf("#") + 1);
+          const scrollLink = document.getElementById(id[0]);
+          if (scrollLink) {
+            console.log(scrollLink);
+            var topDiv = scrollLink.offsetTop;
+            window.scroll({ top: topDiv, left: 0, behavior: "auto" });
+          }
 
-        const scrollLink = document.getElementById(id[0]);
-        if (scrollLink) {
-          console.log(scrollLink);
-          var topDiv = scrollLink.offsetTop;
-          window.scroll({ top: topDiv, left: 0, behavior: "auto" });
-        }
-      }, "200");
 
         // smooth scroll
 
